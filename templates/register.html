@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Register</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.1.2/css/all.css">
+	</head>
+	<body>
+		<div class="register">
+			<h1>Register</h1>
+			<div class="links">
+				<a href="{{ url_for('login') }}">Masuk</a>
+				<a href="{{ url_for('register') }}" class="active">Daftar</a>
+			</div>
+			<form action="{{ url_for('register') }}" method="post" autocomplete="off">
+				<label for="nip">
+					<i class="fa-solid fa-barcode"></i>
+				</label>
+				<input type="text" name="nip" placeholder="NIP" id="nip" required>
+				<label for="namalengkap">
+					<i class="fa-solid fa-user"></i>
+				</label>
+				<input type="text" name="namapengguna" placeholder="Nama Pengguna" id="namapengguna" required>
+				<label for="katasandi">
+					<i class="fas fa-lock"></i>
+				</label>
+				<input type="password" name="katasandi" placeholder="Kata Sandi" id="katasandi" required>
+				<label for="konfirmasi">
+					<i class="fa-solid fa-key"></i>
+				</label>
+				<input type="password" placeholder="Konfirmasi Sandi" required>
+				<label for="status">
+					<i class="fa-solid fa-users"></i>
+				</label>
+				<input type="text" name="status" placeholder="Status" id="status" required>
+				<div class="msg">{{ msg }}</div>
+				<input type="submit" value="Daftar">
+			</form>
+		</div>
+		<script src="{{ url_for('static', filename='script.js') }}"></script>
+	</body>
+</html>

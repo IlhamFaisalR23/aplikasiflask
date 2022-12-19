@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}Tambah Orang{% endblock %}
+
+{% block content %}
+<form action="/aplikasi/lihat/edit/{{ row[0] }}" method=post>
+        <br>
+        
+        <div class="card text-start">
+            <div class="bg-icon">
+                <img src="{{ url_for('static', filename='img/logo11.png') }}" width="128px">
+                </div>
+            <div class="bg-icon2">
+                <img src="{{ url_for('static', filename='img/indonesia.png') }}" width="128px">
+                </div>
+            <div class="bg-text">
+                <p>Aplikasi KIM</p>
+                <p>KARTU INDONESIA MAJU</p>
+                </div>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+            <div class="card-body">
+                <div class="mb-3 row">
+                    <label for="nomorkartu" class="col-sm-2 col-form-label">Nomor Kartu:</label>
+                        <div class="col-sm-10">
+                    <input type="input" class="form-control" placeholder="Nomor Kartu" name="nomorkartu" value="{{ row[1] }}" autocomplete="off" style="opacity: 65%;">
+                        </div>    
+                    </div>
+            
+                    <div class="mb-3 row">
+                    <label for="nama" class="col-sm-2 col-form-label">Nama Lengkap:</label>
+                        <div class="col-sm-10">
+                    <input type="input" class="form-control" placeholder="Nama Lengkap" name="nama" value="{{ row[2] }}" required autocomplete="off">
+                        </div>
+                    </div>
+            
+                    <div class="mb-3 row">
+                        <label for="alamat" class="col-sm-2 col-form-label">Alamat:</label>
+                            <div class="col-sm-10">
+                        <input type="input" class="form-control" placeholder="Alamat" name="alamat" value="{{ row[3] }}" required autocomplete="off">
+                            </div>
+                        </div>
+            
+                    <div class="mb-3 row">
+                        <label for="lahir" class="col-sm-2 col-form-label">Tanggal Lahir:</label>
+                            <div class="col-sm-10">
+                        <input type="input" class="form-control" placeholder="Tanggal Lahir" name="lahir" value="{{ row[4] }}" required autocomplete="off">
+                            </div>
+                        </div>
+            
+                    <div class="mb-3 row">
+                        <label for="nik" class="col-sm-2 col-form-label">NIK:</label>
+                            <div class="col-sm-10">
+                        <input type="input" class="form-control" placeholder="NIK" name="nik" value="{{ row[5] }}" required autocomplete="off">
+                            </div>
+                        </div>
+            
+                    <div class="mb-3 row">
+                        <label for="id_fasilitas" class="col-sm-2 col-form-label">Fasilitas:</label>
+                            <div class="col-sm-10">
+                                <select id="cars" name="id_fasilitas" class="form-control">
+                                    <option value="1">Standar</option>
+                                    <option value="2">VIP</option>
+                                    <option value="3">VIP++</option>
+                                  </select>                              
+                                </div>
+                        </div>
+            </div>
+            <div class="card text-center">
+                <div class="card-footer text-muted">
+                    <button type="submit" class="btn btn-warning">Update</button>
+                    <button onclick="history.back()" class="btn btn-secondary">Cancel</button>
+            </div>
+            </div>
+          
+    </form>
+{% endblock %}
